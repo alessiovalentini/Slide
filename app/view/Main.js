@@ -17,7 +17,7 @@ Ext.define('slide.view.Main', {
         /////////////////////////////////////////////////////////
 
         menuWidth    : 250,
-        mainTitle    : 'Client Management Portal',
+        mainTitles   : 'Management Portal',
         openMenuIcon : 'list',                         // pico image
 
         /////////////////////////////////////////////////////////
@@ -68,7 +68,7 @@ Ext.define('slide.view.Main', {
     /////////////////////////////////////////////////////////
 
     initialize : function() {
-        this.setMainTitle( this.getMainTitle() )    // init with my title property
+        this.setMainTitle( this.getMainTitles() )    // init with my title property
         this.setMenuOpenIcon( this.getOpenMenuIcon() )
     },
 

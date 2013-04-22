@@ -33,7 +33,7 @@ Ext.application({
         // Instanciate main view
         wrapper = Ext.create('slide.view.Wrapper')
 
-        // eventually customize main view
+        // eventually customize main view ...eventually add public method to the wrapper
         wrapper.setMenuOpenIcon( 'list' )
 
         // Initialize the main view
