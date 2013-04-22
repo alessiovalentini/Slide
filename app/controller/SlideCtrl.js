@@ -1,38 +1,55 @@
 Ext.define('slide.controller.SlideCtrl', {
     extend: 'Ext.app.Controller',
 
+    /////////////////////////////////////////////////////////////////////////////
+    //  Require elements for this class (otherwise require them at app.js level)
+    /////////////////////////////////////////////////////////////////////////////
+
     requires: [
     	'slide.view.Main',
     	'slide.view.Menu'
     ],
 
     config: {
-    	refs: {
-    		main: 'main',
-    		menu: 'menu',
-            mainWrapper: 'mainContent',
-            menuButton: 'button[action=openMenu]'
+
+        refs: {
+    		main : 'Main',
+    		menu : 'Menu',
+            mainWrapper : 'MainContent',
+            menuButton  : 'button[action=openMenu]'
     	},
 
     	control: {
-            menuButton: {
-    			tap: 'onOpenMenuButtonTapped'
+            menuButton : {
+    			tap : 'onOpenMenuButtonTapped'
     		},
 
-    		menu: {
-                itemtap: 'onMenuOptionTapped',
-                init: 'onInitMenu'
+    		menu : {
+                itemtap : 'onMenuOptionTapped',
+                init    : 'onInitMenu'
     		},
 
             main: {
-                tap: 'onMainTapped'    // closes the menu when tapping on main container (this shouldn't be needed because the view is closed when tapping the list item)
+                tap : 'onMainTapped'    // closes the menu when tapping on main container (this shouldn't be needed because the view is closed when tapping the list item)
             },
 
             mainWrapper: {
-                tap: 'onMainTapped'
+                tap : 'onMainTapped'
             }
     	}
     },
+
+    /////////////////////////////////////////////////////////
+    //  Init
+    /////////////////////////////////////////////////////////
+
+    onInitMenu : function (){
+        // ...
+    },
+
+    /////////////////////////////////////////////////////////
+    //  Methods
+    /////////////////////////////////////////////////////////
 
     /**
      * When the main menu is tapped (only when it's masked -> menu is open)
