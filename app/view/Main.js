@@ -2,6 +2,10 @@ Ext.define('slide.view.Main', {
     extend: 'Ext.Container',
     xtype: 'main',
 
+    requires : [
+        'slide.view.MainContent'
+    ],
+
     config: {
 
         width: '100%',
@@ -41,8 +45,7 @@ Ext.define('slide.view.Main', {
 
             //actual content loaded dynamically => if possible keep this container (it hides the menu below) and put the content inside
             {
-                xtype: 'panel',
-                html : 'hallo'
+                xtype: 'mainContent',
             }
         ]
     },
@@ -89,20 +92,20 @@ Ext.define('slide.view.Main', {
         constraint.max.x = offsetX;
         this.slideMenu(offsetX, duration);
 
-        // if(masked){
-        //     //open menu -> create a special mask to detects tap events
-        //     this.setMasked({
-        //         xtype: 'mask',
-        //         listeners: {
-        //             tap: function(){
-        //                 //Main (this.parent) fires a tap event only when the main is wrapped
-        //                 this.parent.fireEvent('tap');
-        //             }
-        //         }
-        //     })
-        // }else{
-        //     this.setMasked(false);
-        // }
+        if(masked){
+            //open menu -> create a special mask to detects tap events
+            this.setMasked({
+                xtype: 'mask',
+                listeners: {
+                    tap: function(){
+                        //Main (this.parent) fires a tap event only when the main is wrapped
+                        this.parent.fireEvent('tap');
+                    }
+                }
+            })
+        }else{
+            this.setMasked(false);
+        }
      },
 
     /**

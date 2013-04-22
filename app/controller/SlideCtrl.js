@@ -10,7 +10,7 @@ Ext.define('slide.controller.SlideCtrl', {
     	refs: {
     		main: 'main',
     		menu: 'menu',
-            // mainWrapper: 'mainwrapper',
+            mainWrapper: 'mainContent',
             menuButton: 'button[action=openMenu]'
     	},
 
@@ -19,7 +19,6 @@ Ext.define('slide.controller.SlideCtrl', {
     			tap: 'onOpenMenuButtonTapped'
     		},
 
-            // AV - same itemtap event => put here my actions
     		menu: {
                 itemtap: 'onMenuOptionTapped',
                 init: 'onInitMenu'
