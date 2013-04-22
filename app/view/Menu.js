@@ -5,12 +5,6 @@ Ext.define('slide.view.Menu', {
     config: {
 
         style: 'position: absolute; top: 0; left: 0; z-index: 1',
-
-        // width: '100%',
-        // height: '100%',
-
-        title: 'slider Menu', //You can change it using menu.setTitle('new title');
-
         width: 250,
         closeAnimDuration: 300,
         openAnimDuration: 300,
@@ -26,5 +20,9 @@ Ext.define('slide.view.Menu', {
                 docked : 'top'
             }
         ]
+    },
+
+    initialize : function() {
+        this.items.items[0].setTitle('Menu')
     }
 });

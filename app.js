@@ -14,6 +14,8 @@ Ext.application({
 
     views: ['Wrapper'],
 
+    controllers: ['SlideCtrl'],
+
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
